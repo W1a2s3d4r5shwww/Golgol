@@ -1,0 +1,9 @@
+# Cloudflare Wrangler v2 の設定例（デプロイ時に account_id 等を入れてください）
+name = "youtube-opener-worker"
+main = "worker.js" # worker ファイル
+compatibility_date = "2025-10-24"
+
+# これらは本番に合わせて設定してください
+# account_id = "YOUR_CLOUDFLARE_ACCOUNT_ID"
+# workers_dev = true
+# route = "example.com/r"   # カスタムドメインで route を使う場合
