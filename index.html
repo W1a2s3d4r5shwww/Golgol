@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>YouTube Opener — Production</title>
+
+  <!-- ブラウザのリファラー送信を抑える設定 -->
+  <meta name="referrer" content="no-referrer" />
+  <!-- 最小限の CSP: 必要に応じ調整 -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; frame-ancestors 'none';">
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main>
+    <h1>YouTube Opener</h1>
+    <p>YouTube の動画 URL を入れて「開く」を押すと移動します。入力はサーバで検証します。</p>
+
+    <label for="url">YouTube URL</label>
+    <input id="url" type="url" inputmode="url" placeholder="https://www.youtube.com/watch?v=..." autocomplete="off" />
+
+    <div class="options">
+      <label><input id="open-new" type="checkbox" checked /> 新しいタブで開く</label>
+      <label><input id="noreferrer" type="checkbox" /> rel="noreferrer" を付ける</label>
+      <label><input id="use-proxy" type="checkbox" /> サーバー中継で開く</label>
+    </div>
+
+    <div class="actions">
+      <button id="open">開く</button>
+      <button id="normalize">正規化して表示</button>
+    </div>
+
+    <p id="message" class="msg" role="status" aria-live="polite"></p>
+  </main>
+
+  <script src="./script.js"></script>
+</body>
+</html>
